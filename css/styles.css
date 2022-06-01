@@ -16,11 +16,11 @@
 }
 
 /* Typography */
-
 ::selection {
   background: var(--color-primary);
   color: #fff;
 }
+
 html {
   /* 62.5% of 16px = 10px */
   font-size: 62.5%;
@@ -42,7 +42,6 @@ h3 {
 }
 
 h1 {
-  /* 1 x font-size of the html element */
   font-size: 7rem;
 }
 
@@ -84,7 +83,7 @@ a {
 
 .link-arrow {
   color: var(--color-accent);
-  text-transform: uppercese;
+  text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -104,8 +103,8 @@ a {
     font-size: 1.5rem;
   }
 }
-
 /* Badges */
+
 .badge {
   border-radius: 20px;
   font-size: 2rem;
@@ -129,7 +128,7 @@ a {
   padding: 0.5rem 1.5rem;
 }
 
-@media screen and (min0width: 1024px) {
+@media screen and (min-width: 1024px) {
   .badge {
     font-size: 1.5rem;
   }
@@ -138,7 +137,6 @@ a {
     font-size: 1.2rem;
   }
 }
-
 /* Lists */
 .list {
   list-style: none;
@@ -166,7 +164,6 @@ a {
     padding-left: 0;
   }
 }
-
 /* Icons */
 .icon {
   width: 40px;
@@ -237,7 +234,7 @@ a {
 }
 
 .btn--secondary:hover {
-  background: #00c8eb;
+  background: #05cdf0;
 }
 
 .btn--accent {
@@ -249,16 +246,6 @@ a {
   background: #ec3000;
 }
 
-.btn--stretched {
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
-
-.btn--block {
-  width: 100%;
-  display: inline-block;
-}
-
 .btn--outline {
   background: #fff;
   color: var(--color-headings);
@@ -268,6 +255,16 @@ a {
 .btn--outline:hover {
   background: var(--color-headings);
   color: #fff;
+}
+
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.btn--block {
+  width: 100%;
+  display: inline-block;
 }
 
 @media screen and (min-width: 1024px) {
@@ -311,7 +308,6 @@ a {
     font-size: 1.5rem;
   }
 }
-
 /* Cards */
 .card {
   border-radius: 7px;
@@ -358,7 +354,7 @@ a {
   font-size: 6rem;
 }
 
-.plan__biling_cycle {
+.plan__billing-cycle {
   font-size: 2.4rem;
   font-weight: 300;
   opacity: 0.8;
@@ -372,7 +368,7 @@ a {
   display: block;
 }
 
-.plan .list_item {
+.plan .list__item {
   margin-bottom: 2rem;
 }
 
@@ -410,7 +406,7 @@ a {
     font-size: 5rem;
   }
 
-  .plan__biling_cycle {
+  .plan__billing-cycle {
     font-size: 1.6rem;
   }
 
@@ -436,7 +432,6 @@ a {
 .media__image {
   margin-top: 1rem;
 }
-
 /* Quotes */
 .quote {
   font-size: 3rem;
@@ -505,11 +500,12 @@ a {
 
 /* Testimonials */
 .testimonial {
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .testimonial__image {
   position: relative;
+  margin: 0 3rem;
 }
 
 .testimonial__image > img {
@@ -523,6 +519,10 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+  .testimonial__image {
+    margin: 0;
+  }
+
   .testimonial .quote,
   .testimonial .quote__author {
     font-size: 2.4rem;
@@ -530,6 +530,7 @@ a {
 
   .testimonial .quote {
     margin-left: 6rem;
+    margin-right: 0;
   }
 }
 
@@ -605,7 +606,6 @@ a {
   max-height: 100vh;
   opacity: 1;
 }
-
 /* Blocks */
 .block {
   --padding-vertical: 6rem;
@@ -647,7 +647,7 @@ a {
   margin: 0 auto;
 }
 
-/* Navigation bar */
+/* Navigation Bar */
 .nav {
   background: #000;
   display: flex;
@@ -758,7 +758,6 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
 }
-
 /* Plans Block */
 .block-plans .grid {
   gap: 8rem 4rem;
@@ -802,6 +801,7 @@ a {
   .block-showcase .grid {
     grid-template-columns: 50% 50%;
   }
+
   .block-showcase__image {
     justify-self: end;
   }
@@ -809,5 +809,85 @@ a {
   .block-showcase__image > img {
     width: auto;
     max-width: 700px;
+  }
+}
+/* Footer */
+.footer {
+  background: #232323;
+}
+
+.footer a {
+  color: #777;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+
+.footer__section .list {
+  margin: 0;
+}
+
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__brand img {
+  /* TODO: Consider refactoring this and applying it to 
+  all images. */
+  width: 100%;
+  max-width: 230px;
+}
+
+.footer__copyright {
+  font-size: 2.1rem;
+  color: #fff;
+  opacity: 0.3;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.5rem;
+  }
+  .footer__sections {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+
+  .footer .collapsible__chevron {
+    display: none;
+  }
+
+  .footer .collapsible__content {
+    opacity: 1;
+    max-height: 100%;
+  }
+
+  .footer__brand {
+    order: -1;
+    margin-top: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+
+  .footer__section {
+    border: 0;
+  }
+
+  .footer__heading {
+    font-size: 1.6rem;
   }
 }
